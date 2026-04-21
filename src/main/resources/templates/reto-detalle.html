@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title th:text="${reto.titulo}">Detalle del reto</title>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <main class="contenedor">
+            <section class="panel">
+                <p class="etiqueta" th:text="'MÓDULO ' + ${reto.id}">MÓDULO 1</p>
+                <h1 th:text="${reto.titulo}">Reto 01</h1>
+                <p class="subtitulo" th:text="${reto.descripcion}">
+                    Descripción del reto.
+                </p>
+
+                <div class="bloque">
+                    <p class="texto-secundario">
+                        Esta es una pantalla base del módulo. El contenido real del reto se definirá en la fase 4.
+                    </p>
+                </div>
+
+                <div class="acciones">
+                    <button class="boton-sistema" type="button"
+                            th:attr="data-reto-id=${reto.id}"
+                            onclick="marcarComoCompletadoDesdeDetalle(this)">
+                        Marcar como completado
+                    </button>
+
+                    <a href="/retos" class="boton-secundario">Regresar a la secuencia</a>
+                </div>
+            </section>
+        </main>
+
+        <script src="/js/storage.js"></script>
+    </body>
+</html>

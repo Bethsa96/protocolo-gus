@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOCOLO GUS</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="panel">
+            <p class="etiqueta">SISTEMA ACTIVO</p>
+            <h1>PROTOCOLO GUS</h1>
+            <p class="subtitulo">Módulo central de supervisión iniciado.</p>
+
+            <div class="bloque estado-bloque">
+                <div class="estado-linea">
+                    <span>Estado:</span>
+                    <strong>En espera de sincronización</strong>
+                </div>
+
+                <div class="sync-wrap">
+                    <div class="sync-bar">
+                        <div class="sync-bar-fill"></div>
+                    </div>
+                    <p class="sync-text" id="syncText">Sincronizando módulos...</p>
+                </div>
+            </div>
+
+            <div class="bloque">
+                <span>Cuenta atrás:</span>
+
+                <div class="countdown-circles">
+                    <div class="time-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                        <circle class="ring-bg" cx="70" cy="70" r="54"></circle>
+                        <circle class="ring-progress days-ring" cx="70" cy="70" r="54"></circle>
+                        </svg>
+                        <div class="time-content">
+                            <span id="days" class="time-number">0</span>
+                            <span class="time-label">DÍAS</span>
+                        </div>
+                    </div>
+
+                    <div class="time-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                        <circle class="ring-bg" cx="70" cy="70" r="54"></circle>
+                        <circle class="ring-progress hours-ring" cx="70" cy="70" r="54"></circle>
+                        </svg>
+                        <div class="time-content">
+                            <span id="hours" class="time-number">00</span>
+                            <span class="time-label">HORAS</span>
+                        </div>
+                    </div>
+
+                    <div class="time-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                        <circle class="ring-bg" cx="70" cy="70" r="54"></circle>
+                        <circle class="ring-progress minutes-ring" cx="70" cy="70" r="54"></circle>
+                        </svg>
+                        <div class="time-content">
+                            <span id="minutes" class="time-number">00</span>
+                            <span class="time-label">MIN</span>
+                        </div>
+                    </div>
+
+                    <div class="time-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                        <circle class="ring-bg" cx="70" cy="70" r="54"></circle>
+                        <circle class="ring-progress seconds-ring" cx="70" cy="70" r="54"></circle>
+                        </svg>
+                        <div class="time-content">
+                            <span id="seconds" class="time-number">00</span>
+                            <span class="time-label">SEG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/countdown.js"></script>
+    <script src="/js/storage.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Módulos del sistema</title>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <main class="contenedor">
+            <section class="panel">
+                <p class="etiqueta">SECUENCIA DE MÓDULOS</p>
+                <h1>Módulos disponibles</h1>
+                <div class="bloque" th:if="${proximoReto != null}">
+                    <strong>Próximo desbloqueo:</strong>
+                    <p class="texto-secundario">
+                        <span th:text="'Módulo ' + ${proximoReto.id} + ' — ' + ${#temporals.format(proximoReto.fechaDesbloqueo, 'dd/MM/yyyy HH:mm')}">
+                            Módulo 1 — 02/07/2026 17:30
+                        </span>
+                    </p>
+                    <p class="texto-secundario">
+                        Faltan: <span id="proximo-desbloqueo-countdown"
+                                      th:attr="data-fecha=${#temporals.format(proximoReto.fechaDesbloqueo, 'yyyy-MM-dd''T''HH:mm:ss')}">
+                            Calculando...
+                        </span>
+                    </p>
+                </div>
+                <div class="bloque">
+                    <strong>Estado del sistema:</strong>
+                    <p class="texto-secundario">
+                        Los módulos completados seguirán disponibles. Los módulos futuros permanecerán bloqueados hasta su fecha de activación.
+                    </p>
+                </div>
+
+                <div class="retos-grid">
+                    <div class="reto-card"
+                         th:each="reto : ${retos}"
+                         th:attr="data-reto-id=${reto.id}"
+                         th:classappend="${reto.fechaDesbloqueo.isAfter(ahora)} ? ' reto-bloqueado' : ' reto-disponible'">
+
+                        <div class="reto-header">
+                            <span class="reto-id" th:text="'MÓDULO ' + ${reto.id}">MÓDULO 1</span>
+                            <span class="reto-estado"
+                                  th:text="${reto.fechaDesbloqueo.isAfter(ahora)} ? 'BLOQUEADO' : 'DISPONIBLE'">
+                                DISPONIBLE
+                            </span>
+                        </div>
+
+                        <h2 th:text="${reto.titulo}">Reto 01</h2>
+                        <p th:text="${reto.descripcion}">Descripción del reto.</p>
+
+                        <p class="reto-fecha">
+                            Desbloqueo:
+                            <span th:text="${#temporals.format(reto.fechaDesbloqueo, 'dd/MM/yyyy HH:mm')}">
+                                02/07/2026 17:30
+                            </span>
+                        </p>
+
+                        <a class="boton-sistema boton-reto"
+                           th:href="${reto.fechaDesbloqueo.isAfter(ahora)} ? '#' : @{/retos/{id}(id=${reto.id})}"
+                           th:classappend="${reto.fechaDesbloqueo.isAfter(ahora)} ? ' boton-deshabilitado' : ''"
+                           th:aria-disabled="${reto.fechaDesbloqueo.isAfter(ahora)} ? 'true' : null"
+                           th:tabindex="${reto.fechaDesbloqueo.isAfter(ahora)} ? '-1' : null">
+                            Acceder
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <script src="/js/storage.js"></script>
+    </body>
+</html>
