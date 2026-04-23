@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reto 1 - Reconexión del sistema</title>
+        <link rel="stylesheet" href="/css/reto1.css">
+    </head>
+    <body>
+        <main class="contenedor">
+            <!-- Bloque narrativo inicial del reto -->
+            <section class="panel-historia">
+                <p class="etiqueta">RETO 1 · RECONEXIÓN DEL SISTEMA</p>
+                <h1>Inicialización de protocolo</h1>
+
+                <div class="bloque-historia">
+                    <p>[PROYECTO GUS_30]</p>
+                    <p>Estado: <strong>COMPROMETIDO</strong></p>
+                    <p>Clasificación: <strong>CONFIDENCIAL</strong></p>
+                    <br>
+                    <p>Hace 30 años nació un sistema único.</p>
+                    <p>Diseñado para evolucionar, adaptarse… y resistir.</p>
+                    <p>Durante años funcionó sin errores.</p>
+                    <p>Hasta ahora.</p>
+                    <br>
+                    <p>Se ha detectado una anomalía en el núcleo del sistema.</p>
+                    <p>No responde a patrones conocidos.</p>
+                    <p>No parece seguir una lógica maliciosa… pero tampoco estable.</p>
+                    <br>
+                    <p>Los módulos auxiliares han sido aislados:</p>
+                    <p>- BOLA → sin respuesta</p>
+                    <p>- VENUS → sin respuesta</p>
+                    <br>
+                    <p>El acceso al <strong>PROTOCOLO_GUS</strong> ha sido bloqueado.</p>
+                    <p>Solo una entidad mantiene acceso suficiente para intervenir:</p>
+                    <br>
+                    <p>[USUARIO DETECTADO]</p>
+                    <p>Nivel: <strong>ROOT</strong></p>
+                    <br>
+                    <p>Se requiere intervención manual.</p>
+                    <p>Inicializando terminal...</p>
+                </div>
+            </section>
+
+            <!-- Terminal interactiva del reto -->
+            <section class="terminal-panel">
+                <div class="terminal-header">
+                    <span class="dot rojo"></span>
+                    <span class="dot amarillo"></span>
+                    <span class="dot verde"></span>
+                    <span class="terminal-title">root@gus30:~</span>
+                </div>
+
+                <div id="terminal-output" class="terminal-output"></div>
+
+                <form id="terminal-form" class="terminal-form" autocomplete="off">
+                    <label class="prompt" for="command-input">root@gus30:~#</label>
+                    <input id="command-input" type="text" autofocus spellcheck="false">
+                </form>
+            </section>
+
+            <!-- Recompensa final que se muestra al completar el reto -->
+            <section id="resultado-reto" class="resultado oculto">
+                <p class="etiqueta">FRAGMENTO RECUPERADO</p>
+                <h2>Acceso concedido</h2>
+                <p>Fragmento de clave recuperado:</p>
+                <div class="letra-box">G</div>
+                <p class="texto-secundario">El sistema ha sido restaurado parcialmente.</p>
+            </section>
+            
+            <section class="acciones-reto">
+                <a href="/retos" class="boton-secundario">Regresar a la secuencia</a>
+            </section>
+        </main>
+
+        <script src="/js/storage.js"></script>
+        <script src="/js/reto1.js"></script>
+    </body>
+</html>

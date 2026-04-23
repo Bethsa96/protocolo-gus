@@ -39,8 +39,9 @@ public class RetosController {
     }
 
     /**
-     * Muestra una pantalla base para cada reto. Por ahora es un placeholder
-     * técnico que luego se rellenará en fase 4.
+     * Muestra el detalle del reto correspondiente.
+     * De momento, el reto 1 ya tiene plantilla propia.
+     * Los demás retos siguen usando la pantalla base.
      */
     @GetMapping("/retos/{id}")
     public String mostrarDetalleReto(@PathVariable int id, Model model) {
@@ -52,7 +53,11 @@ public class RetosController {
 
         model.addAttribute("reto", reto);
         model.addAttribute("ahora", LocalDateTime.now());
-
+        
+        if (id == 1) {
+            return "reto1";
+        }
+        
         return "reto-detalle";
     }
 }
