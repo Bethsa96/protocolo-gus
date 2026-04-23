@@ -57,7 +57,11 @@ public class RetosController {
         if (id == 1) {
             return "reto1";
         }
-        
+
+        if (id == 2) {
+            return "reto2";
+        }
+
         return "reto-detalle";
     }
 }

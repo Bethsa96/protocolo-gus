@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reto 2 - Debug del sistema</title>
+        <link rel="stylesheet" href="/css/reto2.css">
+    </head>
+    <body>
+        <main class="contenedor">
+            <!-- Cabecera narrativa del reto -->
+            <section class="panel-historia">
+                <p class="etiqueta">RETO 2 · DEBUG DEL SISTEMA</p>
+                <h1>Depuración manual</h1>
+
+                <div class="bloque-historia">
+                    <p>[MÓDULO DE DEPURACIÓN ACTIVADO]</p>
+                    <br>
+                    <p>La reconexión inicial ha permitido recuperar varios métodos internos del sistema.</p>
+                    <p>Sin embargo, se han detectado alteraciones en su lógica.</p>
+                    <p>Las funciones no están destruidas. Han sido modificadas.</p>
+                    <br>
+                    <p>Se requiere intervención manual para restaurar su comportamiento esperado.</p>
+                    <p><strong>Nota:</strong> solo deben corregirse las líneas defectuosas.</p>
+                    <p>Modificar líneas estables puede provocar nuevas anomalías.</p>
+                </div>
+            </section>
+
+            <!-- Panel principal del reto -->
+            <section class="panel-debug">
+                <div class="debug-header">
+                    <p class="etiqueta">MÉTODO <span id="metodo-actual-numero">1</span> / 5</p>
+                    <h2 id="metodo-titulo">Cargando método...</h2>
+                    <p id="metodo-descripcion" class="texto-secundario"></p>
+                </div>
+
+                <div class="codigo-wrapper">
+                    <pre id="bloque-codigo" class="bloque-codigo"></pre>
+                </div>
+
+                <div class="formulario-debug">
+
+                    <div class="campo">
+                        <label for="editorCodigo">Edita el método completo</label>
+                        <textarea id="editorCodigo"
+                                  class="editor-codigo"
+                                  rows="12"
+                                  spellcheck="false"
+                                  placeholder="Edita aquí el método completo..."></textarea>
+                    </div>
+
+                    <div class="acciones">
+                        <button id="btnValidar" class="boton-sistema" type="button">Aplicar corrección</button>
+                    </div>
+                </div>
+
+                <div id="feedback" class="feedback oculto"></div>
+            </section>
+
+            <!-- Resultado final -->
+            <section id="resultado-reto" class="resultado oculto">
+                <p class="etiqueta">FRAGMENTO RECUPERADO</p>
+                <h2>Depuración completada</h2>
+                <p>Los métodos alterados han sido restaurados.</p>
+                <p>Fragmento de clave recuperado:</p>
+                <div class="letra-box">U</div>
+                <p class="texto-secundario">
+                    Nota del sistema: las alteraciones no parecen guiadas por destrucción.
+                    Parecen guiadas por interferencia... caótica.
+                </p>
+            </section>
+
+            <!-- Botón para volver -->
+            <section class="acciones-reto">
+                <a href="/retos" class="boton-secundario">Regresar a la secuencia</a>
+            </section>
+        </main>
+
+        <script src="/js/storage.js"></script>
+        <script src="/js/reto2.js"></script>
+    </body>
+</html>
