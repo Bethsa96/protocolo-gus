@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reto 3 - Investigación BBDD</title>
+        <link rel="stylesheet" href="/css/reto3.css">
+    </head>
+    <body>
+        <main class="contenedor">
+            <!-- Introducción narrativa -->
+            <section class="panel panel-historia">
+                <p class="etiqueta">RETO 3 · INVESTIGACIÓN BBDD</p>
+                <h1>Intrusión en el sistema</h1>
+
+                <div class="bloque-historia">
+                    <p>[MÓDULO DE INVESTIGACIÓN ACTIVADO]</p>
+                    <br>
+                    <p>La alteración del sistema no parece aleatoria.</p>
+                    <p>Existen registros, accesos, incidentes y modificaciones suficientes para reconstruir lo ocurrido.</p>
+                    <br>
+                    <p>Tu objetivo es identificar a la entidad responsable de la intrusión.</p>
+                    <p>Solo las consultas correctas revelarán la verdad.</p>
+                </div>
+            </section>
+
+            <!-- Tablas disponibles -->
+            <section class="panel">
+                <p class="etiqueta">ESTRUCTURA DISPONIBLE</p>
+                <h2>Tablas del caso</h2>
+
+                <div class="tabla-resumen-grid">
+                    <div class="tabla-resumen-item">
+                        <strong>entidades</strong>
+                        <p>Nombres y perfiles de las entidades investigadas.</p>
+                    </div>
+
+                    <div class="tabla-resumen-item">
+                        <strong>modulos</strong>
+                        <p>Partes internas del sistema y su estado actual.</p>
+                    </div>
+
+                    <div class="tabla-resumen-item">
+                        <strong>registros_acceso</strong>
+                        <p>Accesos registrados a cada módulo.</p>
+                    </div>
+
+                    <div class="tabla-resumen-item">
+                        <strong>modificaciones</strong>
+                        <p>Cambios realizados en el sistema.</p>
+                    </div>
+
+                    <div class="tabla-resumen-item">
+                        <strong>incidentes</strong>
+                        <p>Eventos anómalos detectados por el sistema.</p>
+                    </div>
+
+                    <div class="tabla-resumen-item">
+                        <strong>evidencias</strong>
+                        <p>Hallazgos recopilados durante la investigación.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Consola SQL -->
+            <section class="panel">
+                <div class="sql-header">
+                    <div>
+                        <p class="etiqueta">CONSOLA SQL</p>
+                        <h2>Ejecutar consulta</h2>
+                    </div>
+
+                    <button id="btnEmitirConclusion" class="boton-secundario" type="button">
+                        Emitir conclusión
+                    </button>
+                </div>
+
+                <div class="campo">
+                    <label for="sqlQuery">Consulta SQL</label>
+                    <textarea id="sqlQuery"
+                              class="editor-sql"
+                              rows="8"
+                              spellcheck="false"
+                              placeholder="Ej. SELECT * FROM entidades;"></textarea>
+                </div>
+
+                <div class="acciones">
+                    <button id="btnEjecutarQuery" class="boton-sistema" type="button">
+                        Ejecutar consulta
+                    </button>
+                </div>
+
+                <div id="sqlFeedback" class="feedback oculto"></div>
+            </section>
+
+            <!-- Resultados -->
+            <section class="panel">
+                <p class="etiqueta">RESULTADOS</p>
+                <h2>Salida de la consulta</h2>
+
+                <div id="resultadoVacio" class="resultado-vacio">
+                    Aún no se ha ejecutado ninguna consulta.
+                </div>
+
+                <div id="tablaResultadosWrapper" class="tabla-resultados-wrapper oculto">
+                    <table id="tablaResultados" class="tabla-resultados">
+                        <thead id="tablaResultadosHead"></thead>
+                        <tbody id="tablaResultadosBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resultado final -->
+            <section id="resultado-reto" class="panel resultado oculto">
+                <p class="etiqueta">FRAGMENTO RECUPERADO</p>
+                <h2>Conclusión aceptada</h2>
+
+                <div class="bloque-historia resultado-texto">
+                    <p>La investigación confirma que la entidad vinculada a la intrusión es <strong>SALTARINA</strong>.</p>
+                    <p>No se detecta una intención destructiva directa.</p>
+                    <p>La alteración responde a un patrón caótico, impredecible y disruptivo.</p>
+                    <p>Bola y Venus quedan descartados como origen del incidente.</p>
+                </div>
+
+                <p>Fragmento de clave recuperado:</p>
+                <div class="letra-box">S</div>
+            </section>
+
+            <!-- Volver -->
+            <section class="acciones-reto">
+                <a href="/retos" class="boton-secundario">Regresar a la secuencia</a>
+            </section>
+        </main>
+
+        <!-- Modal de conclusión -->
+        <div id="modalConclusion" class="modal oculto">
+            <div class="modal-contenido">
+                <p class="etiqueta">EMITIR CONCLUSIÓN</p>
+                <h3>Identifica al culpable</h3>
+                <p class="texto-secundario">
+                    Introduce el ID de la entidad que consideras responsable de la intrusión.
+                </p>
+
+                <div class="campo">
+                    <label for="culpableIdInput">ID del culpable</label>
+                    <input id="culpableIdInput" type="number" min="1" step="1" placeholder="Ej. 1">
+                </div>
+
+                <div id="modalFeedback" class="feedback oculto"></div>
+
+                <div class="acciones-modal">
+                    <button id="btnConfirmarConclusion" class="boton-sistema" type="button">
+                        Confirmar
+                    </button>
+                    <button id="btnCerrarModal" class="boton-secundario" type="button">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/storage.js"></script>
+        <script src="/js/reto3.js"></script>
+    </body>
+</html>
