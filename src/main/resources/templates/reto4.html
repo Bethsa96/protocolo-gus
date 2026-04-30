@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reto 4 - Línea temporal</title>
+        <link rel="stylesheet" href="/css/reto4.css">
+    </head>
+    <body>
+        <main class="contenedor">
+            <section class="panel-juego">
+                <p class="etiqueta">RETO 4 · LÍNEA TEMPORAL</p>
+                <h1>Reconstrucción temporal</h1>
+
+                <div id="escena" class="escena">
+                    <div class="imagen-wrapper">
+                        <img id="imagenEscena" src="/img/reto4/placeholder.png" alt="Escena del reto">
+                    </div>
+
+                    <div class="dialogo">
+                        <p id="textoEscena"></p>
+                    </div>
+
+                    <div id="opcionesEscena" class="opciones"></div>
+                </div>
+            </section>
+
+            <section id="resultado-reto" class="resultado oculto">
+                <p class="etiqueta">FRAGMENTO RECUPERADO</p>
+                <h2>Línea temporal estabilizada</h2>
+                <p>Has reconstruido correctamente la historia.</p>
+                <p>Fragmento de clave recuperado:</p>
+                <div class="letra-box">R</div>
+            </section>
+
+            <section class="acciones-reto">
+                <a href="/retos" class="boton-secundario">Regresar a la secuencia</a>
+            </section>
+        </main>
+
+        <!-- Audio para efecto de texto -->
+        <audio id="beepTexto" src="/audio/beep.mp3" preload="auto"></audio>
+
+        <script src="/js/storage.js"></script>
+        <script src="/js/reto4.js"></script>
+    </body>
+</html>

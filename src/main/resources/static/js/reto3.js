@@ -148,6 +148,7 @@ function completarReto3() {
     resultadoReto.classList.remove("oculto");
     marcarRetoComoCompletado(3);
     localStorage.setItem("protocolo_gus_reto_3_letra", "S");
+    localStorage.setItem("reto3Culpable", "SALTARINA");
 }
 
 /**

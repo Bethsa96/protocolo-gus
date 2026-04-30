@@ -20,7 +20,7 @@ public class RetoService {
         retos.add(new Reto(2, "Reto 02", "Segundo módulo del sistema.", LocalDateTime.of(2026, 7, 3, 17, 30)));
         retos.add(new Reto(3, "Reto 03", "Tercer módulo del sistema.", LocalDateTime.of(2026, 7, 4, 11, 00)));
         retos.add(new Reto(4, "Reto 04", "Cuarto módulo del sistema.", LocalDateTime.of(2026, 7, 5, 11, 00)));
-        retos.add(new Reto(5, "Reto 05", "Quinto módulo del sistema.", LocalDateTime.of(2026, 7, 6, 17, 30)));
+        retos.add(new Reto(5, "Reto 05", "Quinto módulo del sistema.", LocalDateTime.of(2026, 4, 6, 17, 30)));
         retos.add(new Reto(6, "Reto 06", "Sexto módulo del sistema.", LocalDateTime.of(2026, 7, 7, 17, 30)));
         retos.add(new Reto(7, "Reto 07", "Séptimo módulo del sistema.", LocalDateTime.of(2026, 7, 8, 17, 30)));
         retos.add(new Reto(8, "Reto Final", "Último módulo del sistema.", LocalDateTime.of(2026, 7, 9, 11, 00)));
